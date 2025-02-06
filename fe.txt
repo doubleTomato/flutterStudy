@@ -1,1 +1,1 @@
-test note push
+test note push token 저장되었는가?
