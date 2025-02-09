@@ -26,7 +26,8 @@ class _WidgetfullLifesycleState extends State<WidgetfullLifesycle> {
                 });
 
               },
-                child: CodeFactory(color:color)),
+                child: CodeFactory(color:color),
+            ),
             SizedBox(height: 32,),
             ElevatedButton(onPressed: (){
               setState(() {
@@ -44,7 +45,10 @@ class _WidgetfullLifesycleState extends State<WidgetfullLifesycle> {
 
 class CodeFactory extends StatefulWidget {
   final Color color;
-  const CodeFactory({super.key,required this.color});
+  const CodeFactory({
+    super.key,
+    required this.color
+  });
 
   @override
   State<CodeFactory> createState() => _CodeFactoryState();
@@ -53,17 +57,10 @@ class CodeFactory extends StatefulWidget {
 class _CodeFactoryState extends State<CodeFactory> {
   @override
   Widget build(BuildContext context) {
-    return  GestureDetector(
-      onTap: (){
-        setState(() {
-
-        });
-      },
-      child: Container(
-        width: 50,
-        height: 50,
-        color: widget.color
-      ),
+    return  Container(
+      width: 50,
+      height: 50,
+      color: widget.color
     );
   }
 }
