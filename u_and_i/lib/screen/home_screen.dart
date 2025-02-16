@@ -14,62 +14,64 @@ class HomeScreen extends StatelessWidget{
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
-              Expanded(
-                child: Container(
-                  child: Column(
-                    children: [
-                      Text(
-                        "U&I",
-                        style: TextStyle(
-                          color:Colors.white,
-                          fontFamily: 'estable',
-                          fontSize: 50
-                        ),
-                      ),
-                      Text(
-                          "우리 처음 만난 날",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'batang',
-                          fontSize: 20
-                        ),
-                      ),
-                      Text(
-                        "2023.11.23",
-                        style: TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'batang',
-                            fontSize: 25
-                        ),
-                      ),
-                      IconButton(
-                        iconSize: 60,
-                        color: Colors.red,
-                        onPressed: (){},
-                        icon: Icon(Icons.favorite),
-                      ),
-                      Text(
-                          "D+1",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontFamily: 'batang',
-                          fontWeight: FontWeight.w700,
-                          fontSize: 30
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  child:Image.asset(
-                      'asset/img/backimg.png'
-                  ),
-                ),
-              )
+              _Top(),
+              _Bottom()
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+// 내부에서만 쓴다고 표기 _
+class _Top extends StatelessWidget {
+  const _Top({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final textTheme = Theme.of(context).textTheme;
+    return  Expanded(
+      child: Container(
+        child: Column(
+          children: [
+            Text(
+              "너랑 나랑",
+              style: textTheme.displayLarge,
+            ),
+            Text(
+              "우리 처음 만난 날",
+              style: textTheme.displayMedium,
+            ),
+            Text(
+              "2023.11.23",
+              style: textTheme.bodyMedium,
+            ),
+            IconButton(
+              iconSize: 70,
+              color: Colors.red,
+              onPressed: (){},
+              icon: Icon(Icons.favorite),
+            ),
+            Text(
+              "D+1",
+              style: textTheme.bodyLarge,
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _Bottom extends StatelessWidget {
+  const _Bottom({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return   Expanded(
+      child: Container(
+        child:Image.asset(
+            'asset/img/backimg.png'
         ),
       ),
     );
